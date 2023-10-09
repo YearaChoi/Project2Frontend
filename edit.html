@@ -1,11 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>Edit Book · Bootstrap v4.6</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.100rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Project2_Final</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+
+      <main role="main" class="col-md-8 mx-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Edit Book</h1>
+        </div>
+
+        <form id="editForm" onsubmit="return validateForm()" action="#" method="post">
+          <div class="form-group">
+            <label for="bookTitle">Book Title</label>
+            <input type="text" class="form-control" id="bookTitle" name="bookTitle" required value="Mere Christianity">
+          </div>
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" class="form-control" id="author" name="author" required value="C.S. Lewis">
+          </div>
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="text" class="form-control" id="date" name="date" required value="1952">
+          </div>
+          <div class="form-group">
+            <label for="publisher">Publisher</label>
+            <input type="text" class="form-control" id="publisher" name="publisher" required value="HarperOne">
+          </div>
+          <div class="form-group">
+            <label for="shortReview">Short Review (optional)</label>
+            <textarea class="form-control" id="shortReview" name="shortReview">Great book. The first several sections on the law of man and the law of things are very insightful. I would highly recommend it!</textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">수정</button>
+        </form>
+      </main>
+    </div>
+
+    <script>
+      function validateForm() {
+        // 필수 항목 검사
+        var bookTitle = document.getElementById("bookTitle").value;
+        var author = document.getElementById("author").value;
+        var date = document.getElementById("date").value;
+        var publisher = document.getElementById("publisher").value;
+
+        if (bookTitle === "" || author === "" || date === "" || publisher === "") {
+          alert("필수 항목을 모두 입력하세요.");
+          return false;
+        }
+
+        // 수정 확인 메시지 표시
+        if (confirm("게시물을 수정할까요?")) {
+          alert("게시물이 수정되었습니다.");
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+
+    <!-- Bootstrap 및 jQuery 스크립트 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  </body>
 </html>
