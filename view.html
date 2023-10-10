@@ -51,6 +51,7 @@
           <p><strong>Publisher</strong> HarperOne</p>
           <p><strong>Short review</strong> Great book. The first several section on the law of man and the law of things is very insightful. I would highly recommend it!</p>
         </div>
+        <button class="btn btn-sm btn-primary" onclick="goToMainPage()">메인으로 되돌아가기</button>
       </main>
     </div>
 
@@ -60,6 +61,13 @@
           alert("게시물이 삭제되었습니다.");
         }
       }
+
+      function goToMainPage() {
+        if (confirm("메인 화면으로 돌아가시겠습니까?")) {
+        window.close(); // 현재 창을 닫음
+        window.location.href = "file:///Users/yearachoi/Desktop/Project2Frontend/index.html"; // 다른 페이지로 이동
+        }
+    }
     </script>
 
     <!-- Bootstrap 및 jQuery 스크립트 추가 -->
