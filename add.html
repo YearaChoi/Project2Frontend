@@ -58,6 +58,7 @@
             <textarea class="form-control" id="shortReview" name="shortReview"></textarea>
           </div>
           <button type="submit" class="btn btn-primary">추가</button>
+          <button type="button" class="btn btn-secondary" onclick="closeWindow()">뒤로</button>
         </form>
       </main>
     </div>
@@ -85,6 +86,13 @@
           return false;
         }
       }
+
+      function closeWindow() {
+        if (confirm("이전 화면으로 돌아가시겠습니까?")) {
+        window.close(); // 현재 창을 닫음
+        window.location.href = "file:///Users/yearachoi/Desktop/Project2Frontend/index.html"; // 다른 페이지로 이동
+  }
+}
     </script>
 
     <!-- Bootstrap 및 jQuery 스크립트 추가 -->
